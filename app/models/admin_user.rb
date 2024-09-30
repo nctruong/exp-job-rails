@@ -4,7 +4,7 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: { super_admin: 1, admin: 2 }
+  enum role: { super_admin: 1, admin: 2, employer: 3 }
 
   belongs_to :employer
 
