@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
 
     begin
       decoded = JwtHelper.decode(token)
-      @current_user = User.find(decoded[:user_id])
+      @current_user = AdminUser.find(decoded[:user_id])
     rescue ActiveRecord::RecordNotFound => e
       render json: { errors: e.message }, status: :unauthorized
     rescue JWT::DecodeError => e

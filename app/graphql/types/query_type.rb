@@ -6,5 +6,9 @@ module Types
     field :admin_user_details, resolver: Resolvers::AdminUserDetailsResolver, null: true
 
     field :jobs, resolver: Resolvers::JobListResolver, null: true
+
+    def current_user
+      context[:current_user]
+    end
   end
 end

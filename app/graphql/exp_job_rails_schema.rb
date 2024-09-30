@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ExpJobRailsSchema < GraphQL::Schema
+  rescue_from(CanCan::AccessDenied, &:message)
+
   mutation(Types::MutationType)
   query(Types::QueryType)
 

@@ -8,6 +8,7 @@ module Resolvers
     argument :params, Types::AdminUserFilterParams, required: false, default_value: {}
 
     def resolve(name:, admin_only:, ids:, params:)
+      # authorize! :manage, AdminUser
       return AdminUser.where(id: ids).limit(10) if ids.present?
 
       AdminUserQuery

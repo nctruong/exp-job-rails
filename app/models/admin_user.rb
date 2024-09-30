@@ -8,6 +8,9 @@ class AdminUser < ApplicationRecord
 
   belongs_to :employer
 
+  has_many :admin_user_permissions, dependent: :destroy
+  has_many :permissions, through: :admin_user_permissions
+
   scope :admin_or_above, -> { where("role >= ?", AdminUser.roles[:admin]) }
 
   def self.sort_with(field: 'email', direction: 'asc')

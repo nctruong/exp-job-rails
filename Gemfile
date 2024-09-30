@@ -58,3 +58,5 @@ gem "byebug", "~> 11.1"
 gem "draper", "~> 4.0"
 
 gem "kaminari", "~> 1.2"
+
+gem "cancancan", "~> 3.6"

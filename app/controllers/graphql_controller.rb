@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
 class GraphqlController < ApplicationController
-  skip_before_action :authorize_request if Rails.env.development?
 
   def execute
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user,
     }
     result = ExpJobRailsSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
