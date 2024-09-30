@@ -49,3 +49,4 @@ gem 'dotenv-rails', require: true
 gem 'graphql'
 gem 'graphiql-rails'
 gem 'sprockets-rails'
+gem "devise", "~> 4.9"
