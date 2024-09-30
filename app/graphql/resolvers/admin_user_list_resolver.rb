@@ -8,11 +8,11 @@ module Resolvers
     argument :params, Types::AdminUserFilterParams, required: false, default_value: {}
 
     def resolve(name:, admin_only:, ids:, params:)
-      # authorize! :manage, AdminUser
+      authorize :read, AdminUser
+
       return AdminUser.where(id: ids).limit(10) if ids.present?
 
-      AdminUserQuery
-        .new(params.to_h.merge(admin_only: admin_only, name: name)).all.decorate
+      AdminUserQuery.new(params.to_h.merge(admin_only: admin_only, name: name)).all.decorate
     end
 
   end
