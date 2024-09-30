@@ -1,0 +1,2 @@
+class UserJobApplication < ApplicationRecord
+end
