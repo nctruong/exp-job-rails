@@ -12,6 +12,8 @@ class ApplicationController < ActionController::API
       render json: { errors: e.message }, status: :unauthorized
     rescue JWT::DecodeError => e
       render json: { errors: e.message }, status: :unauthorized
+    rescue RuntimeError => e
+      render json: { errors: e.message }, status: :unauthorized
     end
   end
 end

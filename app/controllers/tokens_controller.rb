@@ -7,10 +7,16 @@ class TokensController < ApplicationController
 
     if user&.valid_password?(params[:password])
       # sign_in(user) if necessary
-      token = JwtHelper.encode(user_id: user.id)
+      token = JwtHelper.encode({user_id: user.id}, expires_in)
       render json: { token: token }, status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
+  end
+
+  private
+
+  def expires_in
+    Rails.env.development? ? 1.year.from_now : 24.hours.from_now
   end
 end
