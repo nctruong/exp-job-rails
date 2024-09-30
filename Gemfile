@@ -54,3 +54,7 @@ gem "devise", "~> 4.9"
 gem "jwt", "~> 2.9"
 
 gem "byebug", "~> 11.1"
+
+gem "draper", "~> 4.0"
+
+gem "kaminari", "~> 1.2"

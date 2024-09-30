@@ -55,6 +55,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (7.1.4)
       activesupport (= 7.1.4)
+    activemodel-serializers-xml (1.0.3)
+      activemodel (>= 5.0.0.a)
+      activesupport (>= 5.0.0.a)
+      builder (~> 3.1)
     activerecord (7.1.4)
       activemodel (= 7.1.4)
       activesupport (= 7.1.4)
@@ -99,6 +103,13 @@ GEM
     dotenv-rails (3.1.4)
       dotenv (= 3.1.4)
       railties (>= 6.1)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
     drb (2.2.1)
     erubi (1.13.0)
     fiber-storage (1.0.0)
@@ -117,6 +128,18 @@ GEM
       reline (>= 0.4.2)
     jwt (2.9.1)
       base64
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -195,9 +218,12 @@ GEM
       psych (>= 4.0.0)
     reline (0.5.10)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    ruby2_keywords (0.0.5)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -228,9 +254,11 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   dotenv-rails
+  draper (~> 4.0)
   graphiql-rails
   graphql
   jwt (~> 2.9)
+  kaminari (~> 1.2)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.4)
