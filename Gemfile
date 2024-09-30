@@ -50,3 +50,7 @@ gem 'graphql'
 gem 'graphiql-rails'
 gem 'sprockets-rails'
 gem "devise", "~> 4.9"
+
+gem "jwt", "~> 2.9"
+
+gem "byebug", "~> 11.1"
