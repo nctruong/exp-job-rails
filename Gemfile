@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'dotenv-rails', require: true
+gem 'graphql'
