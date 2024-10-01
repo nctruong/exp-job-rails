@@ -8,6 +8,10 @@ module Types
     field :city, String, null: false
     field :address, String, null: true
 
+    def self.authorized?(object, context)
+      super && Ability.new(context[:current_user]).can?(:read, Job)
+    end
+
     def employer
       object.employer
     end
