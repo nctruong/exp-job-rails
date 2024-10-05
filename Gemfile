@@ -60,3 +60,7 @@ gem "draper", "~> 4.0"
 gem "kaminari", "~> 1.2"
 
 gem "cancancan", "~> 3.6"
+
+gem "rspec-rails", "~> 7.0"
+
+gem "factory_bot_rails", "~> 6.4"
