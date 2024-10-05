@@ -64,3 +64,5 @@ gem "cancancan", "~> 3.6"
 gem "rspec-rails", "~> 7.0"
 
 gem "factory_bot_rails", "~> 6.4"
+
+gem "annotate", "~> 3.2"

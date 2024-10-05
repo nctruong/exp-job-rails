@@ -13,14 +13,8 @@
 #  role                :string
 #  default             :boolean
 #
-class Permission < ApplicationRecord
-  ROLES = %w(all admin employer)
-  has_many :admin_user_permissions, dependent: :destroy
+require 'rails_helper'
 
-  validates :subject_class, :action, presence: true
-  validates :role, presence: true, inclusion: {in: ROLES}
+RSpec.describe Permission, type: :model do
 
-  scope :for_employer, -> { where(role: %w(employer all)) }
-  scope :for_admin,    -> { where(role: %w(admin all)) }
-  scope :recent,       -> { order(created_at: :asc) }
 end
