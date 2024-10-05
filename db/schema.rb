@@ -11,12 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_09_30_123349) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "admin_user_permissions", force: :cascade do |t|
-    t.bigint "admin_user_id"
-    t.bigint "permission_id"
+    t.integer "admin_user_id"
+    t.integer "permission_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_user_id"], name: "index_admin_user_permissions_on_admin_user_id"
@@ -41,7 +38,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_30_123349) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_applicants_on_user_id"
@@ -71,7 +68,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_30_123349) do
     t.string "fullname"
     t.string "email"
     t.text "advantages"
-    t.bigint "job_id"
+    t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cv_id"
@@ -104,16 +101,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_30_123349) do
   end
 
   create_table "user_job_applications", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "job_application_id"
+    t.integer "user_id"
+    t.integer "job_application_id"
     t.index ["job_application_id"], name: "index_user_job_applications_on_job_application_id"
     t.index ["user_id", "job_application_id"], name: "index_user_job_applications_on_user_id_and_job_application_id"
     t.index ["user_id"], name: "index_user_job_applications_on_user_id"
   end
 
   create_table "user_saved_jobs", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "job_id"
+    t.integer "user_id"
+    t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_user_saved_jobs_on_job_id"
