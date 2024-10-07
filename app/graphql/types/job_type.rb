@@ -9,7 +9,7 @@ module Types
     field :address, String, null: true
 
     def self.authorized?(object, context)
-      super && Ability.new(context[:current_user]).can?(:read, Job)
+      super && (context[:current_user].super_admin? || Ability.new(context[:current_user]).can?(:read, Job))
     end
 
     def employer

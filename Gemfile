@@ -68,3 +68,5 @@ gem "factory_bot_rails", "~> 6.4"
 gem "annotate", "~> 3.2"
 
 gem "sqlite3", "~> 2.1"
+
+gem "rack-cors", "~> 2.0"

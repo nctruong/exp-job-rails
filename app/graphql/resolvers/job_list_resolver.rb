@@ -8,7 +8,7 @@ module Resolvers
     argument :ids, [String], required: false, default_value: []
 
     def resolve(page_index:, page_size:, params:, ids:)
-      authorize :read, Job
+      context[:current_user].super_admin? || authorize(:read, Job)
 
       return Job.all.limit(page_size)
     end
