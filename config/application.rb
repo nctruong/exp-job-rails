@@ -23,5 +23,7 @@ module ExpJobRails
       g.routing_specs false
       g.controller_specs false
     end
+
+    config.common = config_for(:common)
   end
 end

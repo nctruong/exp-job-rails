@@ -70,3 +70,7 @@ gem "annotate", "~> 3.2"
 gem "sqlite3", "~> 2.1"
 
 gem "rack-cors", "~> 2.0"
+
+gem "elasticsearch-model", "~> 8.0"
+
+gem "elasticsearch-rails", "~> 8.0"

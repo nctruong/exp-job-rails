@@ -116,12 +116,31 @@ GEM
       request_store (>= 1.0)
       ruby2_keywords
     drb (2.2.1)
+    elastic-transport (8.3.5)
+      faraday (< 3)
+      multi_json
+    elasticsearch (8.15.0)
+      elastic-transport (~> 8.3)
+      elasticsearch-api (= 8.15.0)
+    elasticsearch-api (8.15.0)
+      multi_json
+    elasticsearch-model (8.0.0)
+      activesupport (> 3)
+      elasticsearch (~> 8)
+      hashie
+    elasticsearch-rails (8.0.0)
     erubi (1.13.0)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faraday (2.12.0)
+      faraday-net_http (>= 2.0, < 3.4)
+      json
+      logger
+    faraday-net_http (3.3.0)
+      net-http
     fiber-storage (1.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -130,12 +149,14 @@ GEM
     graphql (2.3.16)
       base64
       fiber-storage
+    hashie (5.0.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
     irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    json (2.7.2)
     jwt (2.9.1)
       base64
     kaminari (1.2.2)
@@ -150,6 +171,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -163,7 +185,10 @@ GEM
     mini_portile2 (2.8.7)
     minitest (5.25.1)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.16)
       date
       net-protocol
@@ -268,6 +293,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.13.1)
     warden (1.2.9)
       rack (>= 2.0.9)
     webrick (1.8.2)
@@ -289,6 +315,8 @@ DEPENDENCIES
   devise (~> 4.9)
   dotenv-rails
   draper (~> 4.0)
+  elasticsearch-model (~> 8.0)
+  elasticsearch-rails (~> 8.0)
   factory_bot_rails (~> 6.4)
   graphiql-rails
   graphql
