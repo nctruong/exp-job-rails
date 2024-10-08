@@ -67,7 +67,7 @@ class JobDecorator < Draper::Decorator
   end
 
   def formatted_salary
-    'salary'
+    'Fantastic'
   end
 
   def benefits
