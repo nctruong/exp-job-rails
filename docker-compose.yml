@@ -15,6 +15,22 @@ services:
     networks:
       - esnet
 
+  redis:
+    image: 'redis:5.0.7'
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./tmp/redis_data:/data
+  rabbitmq:
+    platform: linux/x86_64
+    image: 'rabbitmq:3.8.2'
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+    volumes:
+      - ./tmp/rabbitmq_data:/var/lib/rabbitmq
+
 volumes:
   esdata:
     driver: local
