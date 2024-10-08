@@ -4,6 +4,7 @@ Bundler.require(*Rails.groups)
 
 module ExpJobRails
   class Application < Rails::Application
+    config.settings  = config_for(:settings)
     config.active_record.query_log_tags_enabled = true
     config.active_record.query_log_tags = [
       :application, :controller, :action, :job,
@@ -24,6 +25,5 @@ module ExpJobRails
       g.controller_specs false
     end
 
-    config.common = config_for(:common)
   end
 end

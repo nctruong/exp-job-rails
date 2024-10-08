@@ -1,3 +1,4 @@
 development:
   elasticsearch_index: exp-job-rails-development
+
 production:
